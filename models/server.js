@@ -2,6 +2,8 @@ const express = require('express');
 
 const cors = require('cors');
 
+const { dbConnection } = require('../db/config');
+
 class Server{
 
     constructor(){
@@ -10,6 +12,7 @@ class Server{
         this.port = process.env.PORT;
 
         this.middlewares();
+        this.conectarDB();
 
 
     }
@@ -28,6 +31,10 @@ class Server{
         console.log('Servidor prendido y funcionando\nPuerto: ', this.port);
         });
 
+    }
+
+    async conectarDB(){
+        await dbConnection();
     }
 
 }

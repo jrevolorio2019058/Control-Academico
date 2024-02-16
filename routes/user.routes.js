@@ -6,7 +6,7 @@ const { validarCampos } = require('../middlewares/validar-campos');
 
 const { existenteEmail, existeUsuarioById} = require('../helpers/db-validator');
 
-const {usuarioPost, usuariosGet, getUsuarioById, usuarioPut} = require('../controllers/user.controller');
+const {usuarioPost, usuariosGet, getUsuarioById, usuarioPut, usuarioDelete} = require('../controllers/user.controller');
 
 const router = Router();
 
@@ -41,5 +41,13 @@ router.put(
         check("id").custom(existeUsuarioById),
         validarCampos
     ], usuarioPut);
+
+router.delete(
+    "/:id",
+    [
+        check("id", "El id no es un formato válido de MongoDB").isMongoId(),
+        check("id").custom(existeUsuarioById),
+        validarCampos
+    ], usuarioDelete);
 
 module.exports = router;

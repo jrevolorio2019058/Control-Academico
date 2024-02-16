@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "86e9d794-dd75-471d-8a21-92d822992d58",
+		"name": "control-Agenda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32787267"
+	},
+	"item": [
+		{
+			"name": "AgregarUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Braulio Echeverria\",\r\n    \"correo\": \"braulioecheverria@kinal.edu.gt\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"TEACHER_ROLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "usuariosGet",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

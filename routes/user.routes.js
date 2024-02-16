@@ -6,7 +6,7 @@ const { validarCampos } = require('../middlewares/validar-campos');
 
 const { existenteEmail} = require('../helpers/db-validator');
 
-const {usuarioPost} = require('../controllers/user.controller');
+const {usuarioPost, usuariosGet} = require('../controllers/user.controller');
 
 const router = Router();
 
@@ -22,5 +22,7 @@ router.post(
     ], usuarioPost
 
 );
+
+router.get("/", usuariosGet);
 
 module.exports = router;

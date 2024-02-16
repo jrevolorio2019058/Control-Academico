@@ -24,8 +24,31 @@ const usuarioPost = async (req, res) => {
 
 }
 
+const usuariosGet = async (req, res = response) => {
+
+    const {limite,desde} = req.query;
+
+    const query = {estado:true};
+
+    const [total, usuarios] = await Promise.all([
+
+        Usuario.countDocuments(query),
+        Usuario.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite))
+
+    ]);
+
+    res.status(200).json({
+        total,
+        usuarios
+    });
+
+}
+
 module.exports = {
 
-    usuarioPost
+    usuarioPost,
+    usuariosGet
 
 }

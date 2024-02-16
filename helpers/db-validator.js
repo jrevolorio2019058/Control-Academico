@@ -10,6 +10,17 @@ const existenteEmail = async (correo = '') => {
 
 }
 
+const existeUsuarioById = async (id='') => {
+
+    const existeUsuario = await Usuario.findOne({id});
+
+    if(existeUsuario){
+        throw new Error(`Status | id:$(id) | No existe`)
+    }
+
+}
+
 module.exports = {
-    existenteEmail
+    existenteEmail,
+    existeUsuarioById
 }

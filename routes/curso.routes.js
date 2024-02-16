@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 
-const {cursoPost} = require('../controllers/curso.controller');
+const {cursoPost, cursoProfesor} = require('../controllers/curso.controller');
 
 const {validarJWT} = require('../middlewares/validar-jwt');
 
@@ -23,6 +23,15 @@ router.post(
         validarCampos
     ],cursoPost
 
+);
+
+router.get(
+    "/",
+    [
+        validarJWT,
+        tieneRole('TEACHER_ROLE'),
+        validarCampos
+    ],cursoProfesor
 );
 
 module.exports = router;

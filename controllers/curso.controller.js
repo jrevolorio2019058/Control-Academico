@@ -4,17 +4,15 @@ const bcryptjs = require('bcryptjs');
 
 const Curso = require('../models/curso');
 
-const Usuario = require('../models/usuario');
+const Usuario = require('../models/usuario')
 
 const cursoPost = async (req, res) => {
 
-    usuarioAutenticado = req.usuario;
+    const usuarioAutenticado = req.usuario;
 
     const { nombreCurso, descripcionCurso } = req.body;
     
     const idProfesor = req.usuarioId._id;
-
-    console.log(idProfesor);
 
     const curso = new Curso({ nombreCurso, descripcionCurso, idProfesor});
 
@@ -29,6 +27,35 @@ const cursoPost = async (req, res) => {
 
 }
 
+const cursoProfesor = async (req, res = response) => {
+    
+    const usuarioAutenticado = req.usuario;
+
+    const { limite, desde } = req.query;
+
+    const id_Profesor = req.usuarioId._id;
+
+    const query = { idProfesor: id_Profesor }
+    
+    const [total, cursos] = await Promise.all([
+
+        Curso.countDocuments(query),
+        Curso.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite))
+
+    ]);
+
+    res.status(200).json({
+        total,
+        cursos,
+        usuarioAutenticado
+
+    })
+
+}
+
 module.exports = {
-    cursoPost
+    cursoPost,
+    cursoProfesor
 }

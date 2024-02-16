@@ -41,6 +41,7 @@ const validarJWT = async (req, res, next) => {
     }
 
     req.usuario = usuario;
+    req.usuarioId = await Usuario.findById(uid);
 
     next();
 

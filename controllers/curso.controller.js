@@ -27,7 +27,7 @@ const cursoPost = async (req, res) => {
 
 }
 
-const cursoProfesor = async (req, res = response) => {
+const cursoGetProfesor = async (req, res = response) => {
     
     const usuarioAutenticado = req.usuario;
 
@@ -55,7 +55,31 @@ const cursoProfesor = async (req, res = response) => {
 
 }
 
+const cursoPutProfesor = async (req, res = response) => {
+
+    const usuarioAutenticado = req.usuario;
+
+    const { id } = req.params;
+
+    const { _id, idProfesor, ...resto } = req.body;
+
+    await Curso.findByIdAndUpdate(id, resto);
+
+    const curso = await Curso.findOne({ _id: id });
+    
+    await curso.save();
+
+    res.status(200).json({
+
+        msd: 'Curso Actualizado con exito',
+        usuarioAutenticado
+
+    })
+
+}
+
 module.exports = {
     cursoPost,
-    cursoProfesor
+    cursoGetProfesor,
+    cursoPutProfesor
 }

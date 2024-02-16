@@ -19,6 +19,11 @@ const CursoSchema = Schema({
 
     idAlumnos: {
         type: String
+    },
+
+    estadoCurso: {
+        type: Boolean,
+        default:true
     }
 
 });

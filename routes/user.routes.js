@@ -50,7 +50,7 @@ router.delete(
     "/:id",
     [
         validarJWT,
-        tieneRole('TEACHER_ROLE', 'STUDENT_ROLE'),
+        tieneRole('TEACHER_ROLE'),
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeUsuarioById),
         validarCampos

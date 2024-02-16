@@ -58,10 +58,37 @@ const getUsuarioById = async (req, res) => {
 
 }
 
+const usuarioPut = async (req, res) => {
+
+    const { id } = req.params;
+
+    const { _id, google, ...resto} = req.body;
+
+    await Usuario.findByIdAndUpdate(id, resto);
+
+    const usuario = await Usuario.findOne({_id: id});
+
+    const {password} = req.body;
+
+    const salt = bcryptjs.genSaltSync();
+
+    usuario.password = bcryptjs.hashSync(password,salt);
+
+    await usuario.save();
+
+    res.status(200).json({
+
+        msd: 'Usuario Actualizado con exito'
+
+    })
+
+}
+
 module.exports = {
 
     usuarioPost,
     usuariosGet,
-    getUsuarioById
+    getUsuarioById,
+    usuarioPut
 
 }

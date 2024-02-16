@@ -6,9 +6,9 @@ const Usuario = require('../models/usuario');
 
 const usuarioPost = async (req, res) => {
 
-    const {nombre, correo, password, role} = req.body;
+    const {nombre, correo, password} = req.body;
 
-    const usuario = new Usuario({nombre, correo, password,role});
+    const usuario = new Usuario({nombre, correo, password});
 
     const salt = bcryptjs.genSaltSync();
 

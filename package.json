@@ -2,12 +2,13 @@
   "name": "control-academico",
   "version": "1.0.0",
   "description": "Api Control Ácademico",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
+  "keywords": [],
   "author": "Jorge Revolorio",
   "license": "ISC",
   "dependencies": {

@@ -38,7 +38,7 @@ const login = async (req, res) => {
             msg: 'Logeado Correctamente',
             usuario,
             token
-        })
+        });
 
     }catch(e){
         console.log(e);

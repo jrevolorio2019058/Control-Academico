@@ -92,10 +92,13 @@ const usuarioDelete = async (req, res) => {
 
     const usuario = await Usuario.findOne({_id:id});
 
+    const usuarioAutenticado = req.usuario;
+
     res.status(200).json({
 
         msg: 'Usuario Eliminado con exito',
-        usuario
+        usuario,
+        usuarioAutenticado
 
     });
 

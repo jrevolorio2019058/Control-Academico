@@ -8,6 +8,10 @@ const { existenteEmail, existeUsuarioById, esRolValido} = require('../helpers/db
 
 const {usuarioPost, usuariosGet, getUsuarioById, usuarioPut, usuarioDelete} = require('../controllers/user.controller');
 
+const {validarJWT} = require('../middlewares/validar-jwt');
+
+const {tieneRole} = require('../middlewares/validar-roles');
+
 const router = Router();
 
 router.post(
@@ -45,6 +49,8 @@ router.put(
 router.delete(
     "/:id",
     [
+        validarJWT,
+        tieneRole('TEACHER_ROLE', 'STUDENT_ROLE'),
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeUsuarioById),
         validarCampos

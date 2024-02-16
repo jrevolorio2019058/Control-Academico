@@ -11,9 +11,11 @@ class Server{
         this.app = express();
         this.port = process.env.PORT;
 
+        this.usuarioPath = '/api/usuarios';
+
         this.middlewares();
         this.conectarDB();
-
+        this.routes();
 
     }
 
@@ -30,6 +32,12 @@ class Server{
         this.app.listen(this.port, () => {
         console.log('Servidor prendido y funcionando\nPuerto: ', this.port);
         });
+
+    }
+
+    routes() {
+
+        this.app.use(this.usuarioPath, require('../routes/user.routes'));
 
     }
 

@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 
-const {cursoPost, cursoGetProfesor, cursoPutProfesor} = require('../controllers/curso.controller');
+const {cursoPost, cursoGetProfesor, cursoPutProfesor, cursoDelete} = require('../controllers/curso.controller');
 
 const {validarJWT} = require('../middlewares/validar-jwt');
 
@@ -45,5 +45,15 @@ router.put(
         validarCampos
     ], cursoPutProfesor
 )
+
+router.delete(
+
+    "/:id",
+    [
+        validarJWT,
+        tieneRole('TEACHER_ROLE'),
+        validarCampos
+    ],cursoDelete
+);
 
 module.exports = router;

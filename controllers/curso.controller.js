@@ -35,7 +35,7 @@ const cursoGetProfesor = async (req, res = response) => {
 
     const id_Profesor = req.usuarioId._id;
 
-    const query = { idProfesor: id_Profesor }
+    const query = { idProfesor: id_Profesor, estado:true}
     
     const [total, cursos] = await Promise.all([
 
@@ -67,7 +67,7 @@ const cursoPutProfesor = async (req, res = response) => {
 
     const curso = await Curso.findOne({ _id: id });
 
-    console.log(curso.idProfesor);
+    // console.log(curso.idProfesor);
 
     if(curso.idProfesor == req.usuarioId._id){
 
@@ -92,8 +92,44 @@ const cursoPutProfesor = async (req, res = response) => {
 
 }
 
+const cursoDelete = async (req, res) => {
+
+    const {id} = req.params;
+
+    const usuarioAutenticado = req.usuario;
+
+    const curso = await Curso.findOne({ _id: id });
+
+
+    if(curso.idProfesor == req.usuarioId._id){
+
+        await Curso.findByIdAndUpdate(id, {estadoCurso:false});
+
+        const curso = await Curso.findOne({_id:id});
+
+        res.status(200).json({
+
+            msg: 'Curso Eliminado con exito',
+            curso,
+            usuarioAutenticado
+    
+        });
+
+    }else{
+
+        res.status(401).json({
+
+                msg: `El profesor ${req.usuario.nombre} no puede eliminar el curso`,
+            
+            });
+
+    }
+
+}
+
 module.exports = {
     cursoPost,
     cursoGetProfesor,
-    cursoPutProfesor
+    cursoPutProfesor,
+    cursoDelete
 }

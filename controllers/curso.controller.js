@@ -61,7 +61,7 @@ const cursoPutProfesor = async (req, res = response) => {
 
     const { id } = req.params;
 
-    const { _id, idProfesor, ...resto } = req.body;
+    const { _id, idProfesor,idAlumno, ...resto } = req.body;
 
     await Curso.findByIdAndUpdate(id, resto);
 
@@ -86,7 +86,42 @@ const cursoPutProfesor = async (req, res = response) => {
 
                 msg: `El profesor ${req.usuario.nombre} no puede actualizar el curso`,
             
-            });
+        });
+
+    }
+
+}
+
+const cursoPutAlumno = async (req, res) => {
+
+    const usuarioAutenticado = req.usuario;
+
+    const {id} = req.params;
+
+    const idAlumno = req.usuarioId._id;
+
+    await Curso.findByIdAndUpdate(id, idAlumno);
+
+    const curso = await Curso.findOne({_id: id});
+
+    if(nombreCurso.req.body == curso.nombreCurso){
+
+        await curso.save();
+
+        res.status(200).json({
+
+            msd: `Agregado al curso ${curso.nombreCurso}`,
+            usuarioAutenticado
+
+        })
+
+    }else{
+
+        res.status(401).json({
+
+            msg: `No existe el curso ${nombreCurso.req.body}.`,
+        
+        });
 
     }
 
@@ -131,5 +166,6 @@ module.exports = {
     cursoPost,
     cursoGetProfesor,
     cursoPutProfesor,
-    cursoDelete
+    cursoDelete,
+    cursoPutAlumno
 }

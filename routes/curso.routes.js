@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 
-const {cursoPost, cursoGetProfesor, cursoPutProfesor, cursoDelete} = require('../controllers/curso.controller');
+const {cursoPost, cursoGetProfesor, cursoPutProfesor, cursoDelete, cursoPutAlumno} = require('../controllers/curso.controller');
 
 const {validarJWT} = require('../middlewares/validar-jwt');
 
@@ -35,6 +35,19 @@ router.get(
 );
 
 router.put(
+
+    "/alumno"[
+
+        validarJWT,
+        tieneRole('STUDENT_ROLE'),
+        check("nombreCurso", "Es necesario un nombre de curso").not().isEmpty(),
+        validarCampos
+
+    ], cursoPutAlumno
+
+);
+
+router.put(
     "/:id",
     [
 
@@ -44,7 +57,7 @@ router.put(
         check("descripcionCurso", "Es necesaria la descripcion del curso").not().isEmpty(),
         validarCampos
     ], cursoPutProfesor
-)
+);
 
 router.delete(
 

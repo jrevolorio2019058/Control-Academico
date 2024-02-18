@@ -66,15 +66,29 @@ const cursoPutProfesor = async (req, res = response) => {
     await Curso.findByIdAndUpdate(id, resto);
 
     const curso = await Curso.findOne({ _id: id });
+
+    console.log(curso.idProfesor);
+
+    if(curso.idProfesor == req.usuarioId._id){
+
+        await curso.save();
+
+        res.status(200).json({
+
+            msd: 'Curso Actualizado con exito',
+            usuarioAutenticado
     
-    await curso.save();
+        })
 
-    res.status(200).json({
+    }else{
 
-        msd: 'Curso Actualizado con exito',
-        usuarioAutenticado
+        res.status(401).json({
 
-    })
+                msg: `El profesor ${req.usuario.nombre} no puede actualizar el curso`,
+            
+            });
+
+    }
 
 }
 

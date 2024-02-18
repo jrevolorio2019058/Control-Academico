@@ -61,43 +61,8 @@ const validarJWT = async (req, res, next) => {
 
 };
 
-const validarJWTProfesor = (... idProfesor) => {
-
-    return (req = request, res = response, next) =>{
-
-        if(!req.usuario){
-
-            return res
-                .status(500)
-                .json({
-
-                    msg: 'Se quiere verificar un role sin validar el token primero',
-
-                });
-
-        }
-
-        if(idProfesor != req.usuarioId){
-
-            return res
-            .status(401)
-            .json({
-
-                msg: `El profesor ${req.usuario.nombre} no puede actualizar el curso`,
-            
-            });
-
-        }
-
-        next();
-
-    };
-
-};
-
 module.exports = {
 
-  validarJWT,
-  validarJWTProfesor,
+  validarJWT
   
 };

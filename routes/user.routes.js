@@ -6,7 +6,7 @@ const { validarCampos } = require('../middlewares/validar-campos');
 
 const { existenteEmail, existeUsuarioById, esRolValido} = require('../helpers/db-validator');
 
-const {usuarioPost, usuariosGet, getUsuarioById, usuarioPut, usuarioDelete} = require('../controllers/user.controller');
+const {usuarioPost, usuariosGet, getUsuarioById, usuarioPut, usuarioDelete, usuarioAlumnoDelete, profesorPost} = require('../controllers/user.controller');
 
 const {validarJWT} = require('../middlewares/validar-jwt');
 
@@ -24,6 +24,21 @@ router.post(
         check("correo").custom(existenteEmail),
         validarCampos,
     ], usuarioPost
+
+);
+
+router.post(
+
+    "/profesor",
+    [
+        validarJWT,
+        tieneRole('TEACHER_ROLE'),
+        check("nombre", "El nombre es obligatorio").not().isEmpty(),
+        check("password", "El password debe de ser mayor a 6 caracteres").isLength({ min: 6, }),
+        check("correo", "Este no es un correo valido").isEmail(),
+        check("correo").custom(existenteEmail),
+        validarCampos,
+    ], profesorPost
 
 );
 
@@ -51,9 +66,15 @@ router.delete(
     [
         validarJWT,
         tieneRole('TEACHER_ROLE'),
-        check("id", "El id no es un formato válido de MongoDB").isMongoId(),
-        check("id").custom(existeUsuarioById),
         validarCampos
     ], usuarioDelete);
+
+ router.delete(
+    "/",
+    [
+        validarJWT,
+        tieneRole('STUDENT_ROLE'),
+        validarCampos
+    ], usuarioAlumnoDelete);
 
 module.exports = router;

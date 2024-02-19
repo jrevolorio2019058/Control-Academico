@@ -4,6 +4,31 @@ const bcryptjs = require('bcryptjs');
 
 const Usuario = require('../models/usuario');
 
+const profesorPost = async (req, res) => {
+
+    const usuarioAutenticado = req.usuario;
+
+    const {nombre, correo, password} = req.body;
+
+    const role = "TEACHER_ROLE";
+
+    const usuario = new Usuario({nombre, correo, password, role});
+
+    const salt = bcryptjs.genSaltSync();
+
+    usuario.password = bcryptjs.hashSync(password,salt);
+
+    await usuario.save();
+
+    res.status(200).json({
+
+        usuario,
+        usuarioAutenticado
+
+    });
+
+}
+
 const usuarioPost = async (req, res) => {
 
     const {nombre, correo, password} = req.body;
@@ -39,9 +64,12 @@ const usuariosGet = async (req, res = response) => {
 
     ]);
 
+    const usuarioAutenticado = req.usuario;
+
     res.status(200).json({
         total,
-        usuarios
+        usuarios,
+        usuarioAutenticado
     });
 
 }
@@ -52,8 +80,11 @@ const getUsuarioById = async (req, res) => {
 
     const usuario = await Usuario.findOne({_id: id});
 
+    const usuarioAutenticado = req.usuario;
+
     res.status(200).json({
-        usuario
+        usuario,
+        usuarioAutenticado
     });
 
 }
@@ -74,14 +105,16 @@ const usuarioPut = async (req, res) => {
 
     usuario.password = bcryptjs.hashSync(password,salt);
 
+    const usuarioAutenticado = req.usuario;
+
     await usuario.save();
 
     res.status(200).json({
 
-        msd: 'Usuario Actualizado con exito'
+        msd: 'Usuario Actualizado con exito',
+        usuarioAutenticado
 
     })
-
 }
 
 const usuarioDelete = async (req, res) => {
@@ -104,12 +137,34 @@ const usuarioDelete = async (req, res) => {
 
 }
 
+const usuarioAlumnoDelete = async (req, res) => {
+
+    const usuarioAutenticado = req.usuario;
+
+    const id_Alumno = req.usuarioId._id;
+
+    await Usuario.findByIdAndUpdate(id_Alumno,{estado:false});
+
+    const usuario = await Usuario.findOne({_id:id_Alumno});
+
+    res.status(200).json({
+
+        msg: `${usuario.nombre} tu usuario fue eliminado, volver a registrarse si desea volver a usar la aplicación`,
+        usuario,
+        usuarioAutenticado
+
+    });
+
+}
+
 module.exports = {
 
     usuarioPost,
     usuariosGet,
     getUsuarioById,
     usuarioPut,
-    usuarioDelete
+    usuarioDelete,
+    profesorPost,
+    usuarioAlumnoDelete
 
 }

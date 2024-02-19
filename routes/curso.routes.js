@@ -35,7 +35,7 @@ router.get(
 
 router.put(
 
-    "/alumno",
+    "alumno/:id",
     [
 
         validarJWT,
@@ -48,7 +48,7 @@ router.put(
 );
 
 router.put(
-    "/:id",
+    "profesor/:id",
     [
 
         validarJWT,

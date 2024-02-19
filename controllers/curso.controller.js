@@ -94,36 +94,22 @@ const cursoPutAlumno = async (req, res) => {
 
     const usuarioAutenticado = req.usuario;
 
-    const {id} = req.params;
-
-    const {_id, descripcionCurso, idProfesor, estadoCurso, ...resto} = req.body;
-
     const idAlumno = req.usuarioId._id;
+
+    const { id } = req.params;
 
     await Curso.findByIdAndUpdate(id, idAlumno);
 
     const curso = await Curso.findOne({_id: id});
 
-    if(curso.nombreCurso == resto.nombreCurso){
+    await curso.save();
 
-        await curso.save();
+    res.status(200).json({
 
-        res.status(200).json({
+        msd: `Agregado al curso ${nombreCurso}`,
+        usuarioAutenticado
 
-            msd: `Agregado al curso ${curso.nombreCurso}`,
-            usuarioAutenticado
-
-        })
-
-    }else{
-
-        res.status(401).json({
-
-            msg: `No existe el curso ${nombreCurso.req.body}`
-        
-        });
-
-    }
+    })
 
 }
 

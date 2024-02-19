@@ -63,7 +63,7 @@ const cursoGetAlumno = async (req, res = response) => {
 
     const id_Alumno = req.usuarioId._id;
 
-    const query = { idAlumnos: id_Alumno, estado:true}
+    const query = { idAlumnos: { $in: [id_Alumno] }, estado: true };
     
     const [total, cursos] = await Promise.all([
 
@@ -128,17 +128,23 @@ const cursoPutAlumno = async (req, res) => {
     const { id } = req.params;
 
     const curso = await Curso.findOneAndUpdate(
-        { _id: id },
-        { $push: { idAlumnos: idAlumno } },
+        { _id: id, idAlumnos: { $ne: idAlumno } },
+        { $addToSet: { idAlumnos: idAlumno } },
         { new: true }
     );
 
+    if (!curso) {
+        return res.status(400).json({
+            msg: `El alumno ya está en el curso`,
+            usuarioAutenticado
+        });
+    }
+
     res.status(200).json({
-
-        msd: `Agregado al curso`,
-        usuarioAutenticado
-
-    })
+        msg: `Agregado al curso`,
+        usuarioAutenticado,
+        curso
+    });
 
 }
 

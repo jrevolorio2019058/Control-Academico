@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const { validarCampos } = require('../middlewares/validar-campos');
 
-const {cursoPost, cursoGetProfesor, cursoPutProfesor, cursoDelete, cursoPutAlumno} = require('../controllers/curso.controller');
+const {cursoPost, cursoGetProfesor, cursoPutProfesor, cursoDelete, cursoPutAlumno, cursoGetAlumno} = require('../controllers/curso.controller');
 
 const {validarJWT} = require('../middlewares/validar-jwt');
 
@@ -31,6 +31,14 @@ router.get(
         validarJWT,
         tieneRole('TEACHER_ROLE')
     ],cursoGetProfesor
+);
+
+router.get(
+    "/alumno",
+    [
+        validarJWT,
+        tieneRole('STUDENT_ROLE')
+    ],cursoGetAlumno
 );
 
 router.put(

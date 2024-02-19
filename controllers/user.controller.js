@@ -117,6 +117,34 @@ const usuarioPut = async (req, res) => {
     })
 }
 
+const usuarioAlumnoPut = async (req, res) => {
+
+    const usuarioAutenticado = req.usuario;
+
+    const id_Alumno = req.usuarioId._id;
+
+    const { _id, role, estado, ...resto} = req.body;
+
+    await Usuario.findByIdAndUpdate(id_Alumno, resto);
+
+    const usuario = await Usuario.findOne({_id: id_Alumno});
+
+    const {password} = req.body;
+
+    const salt = bcryptjs.genSaltSync();
+
+    usuario.password = bcryptjs.hashSync(password,salt);
+
+    await usuario.save();
+
+    res.status(200).json({
+
+        msg: `${usuario.nombre} tus datos fueron actualizados`,
+        usuarioAutenticado
+
+    })
+}
+
 const usuarioDelete = async (req, res) => {
 
     const {id} = req.params;
@@ -165,6 +193,7 @@ module.exports = {
     usuarioPut,
     usuarioDelete,
     profesorPost,
-    usuarioAlumnoDelete
+    usuarioAlumnoDelete,
+    usuarioAlumnoPut
 
 }

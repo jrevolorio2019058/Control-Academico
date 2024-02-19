@@ -29,14 +29,14 @@ router.get(
     "/",
     [
         validarJWT,
-        tieneRole('TEACHER_ROLE'),
-        validarCampos
+        tieneRole('TEACHER_ROLE')
     ],cursoGetProfesor
 );
 
 router.put(
 
-    "/alumno"[
+    "/alumno",
+    [
 
         validarJWT,
         tieneRole('STUDENT_ROLE'),

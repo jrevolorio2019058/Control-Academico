@@ -67,8 +67,6 @@ const cursoPutProfesor = async (req, res = response) => {
 
     const curso = await Curso.findOne({ _id: id });
 
-    // console.log(curso.idProfesor);
-
     if(curso.idProfesor == req.usuarioId._id){
 
         await curso.save();
@@ -98,13 +96,15 @@ const cursoPutAlumno = async (req, res) => {
 
     const {id} = req.params;
 
+    const {_id, descripcionCurso, idProfesor, estadoCurso, ...resto} = req.body;
+
     const idAlumno = req.usuarioId._id;
 
     await Curso.findByIdAndUpdate(id, idAlumno);
 
     const curso = await Curso.findOne({_id: id});
 
-    if(nombreCurso.req.body == curso.nombreCurso){
+    if(curso.nombreCurso == resto.nombreCurso){
 
         await curso.save();
 
@@ -119,7 +119,7 @@ const cursoPutAlumno = async (req, res) => {
 
         res.status(401).json({
 
-            msg: `No existe el curso ${nombreCurso.req.body}.`,
+            msg: `No existe el curso ${nombreCurso.req.body}`
         
         });
 

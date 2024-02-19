@@ -35,12 +35,11 @@ router.get(
 
 router.put(
 
-    "alumno/:id",
+    "/alumno/:id",
     [
 
         validarJWT,
         tieneRole('STUDENT_ROLE'),
-        check("nombreCurso", "Es necesario un nombre de curso").not().isEmpty(),
         validarCampos
 
     ], cursoPutAlumno
@@ -48,7 +47,7 @@ router.put(
 );
 
 router.put(
-    "profesor/:id",
+    "/:id",
     [
 
         validarJWT,

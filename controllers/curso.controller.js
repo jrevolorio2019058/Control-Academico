@@ -55,6 +55,35 @@ const cursoGetProfesor = async (req, res = response) => {
 
 }
 
+const cursoGetAlumno = async (req, res = response) => {
+    
+    const usuarioAutenticado = req.usuario;
+
+    const { limite, desde } = req.query;
+
+    const id_Alumno = req.usuarioId._id;
+
+    const query = { idAlumnos: id_Alumno, estado:true}
+    
+    const [total, cursos] = await Promise.all([
+
+        Curso.countDocuments(query),
+        Curso.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite))
+
+    ]);
+
+    res.status(200).json({
+        total,
+        cursos,
+        usuarioAutenticado
+
+    })
+
+}
+
+
 const cursoPutProfesor = async (req, res = response) => {
 
     const usuarioAutenticado = req.usuario;
@@ -98,15 +127,15 @@ const cursoPutAlumno = async (req, res) => {
 
     const { id } = req.params;
 
-    await Curso.findByIdAndUpdate(id, idAlumno);
-
-    const curso = await Curso.findOne({_id: id});
-
-    await curso.save();
+    const curso = await Curso.findOneAndUpdate(
+        { _id: id },
+        { $push: { idAlumnos: idAlumno } },
+        { new: true }
+    );
 
     res.status(200).json({
 
-        msd: `Agregado al curso ${nombreCurso}`,
+        msd: `Agregado al curso`,
         usuarioAutenticado
 
     })
@@ -153,5 +182,6 @@ module.exports = {
     cursoGetProfesor,
     cursoPutProfesor,
     cursoDelete,
-    cursoPutAlumno
+    cursoPutAlumno,
+    cursoGetAlumno
 }

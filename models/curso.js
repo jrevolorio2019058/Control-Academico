@@ -18,8 +18,8 @@ const CursoSchema = Schema({
     },
 
     idAlumnos: {
-        type: String,
-        default:""
+        type: [String],
+        default:[]
     },
 
     estadoCurso: {

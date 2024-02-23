@@ -63,7 +63,7 @@ const cursoGetAlumno = async (req, res = response) => {
 
     const id_Alumno = req.usuarioId._id;
 
-    const query = { idAlumnos: { $in: [id_Alumno] }, estado: true };
+    const query = { idAlumnos: { $in: [id_Alumno] }, estadoCurso: true };
     
     const [total, cursos] = await Promise.all([
 

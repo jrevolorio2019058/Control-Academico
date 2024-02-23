@@ -213,13 +213,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDIyNDIsImV4cCI6MTcwODcwNTg0Mn0.UgIlufiwlKdMjqpbyCpxG28uwrN1Qbk8HesvXllQ5tc",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDc2OTMsImV4cCI6MTcwODcxMTI5M30.NkLD0aWYB_cA_DR54UTamm2070xiwtxFu0Esw8_LWmc",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombreCurso\":\"Fisica I\",\r\n    \"descripcionCurso\":\"Curso de Fisica para 1ero Básico\"\r\n}",
+							"raw": "{\r\n    \"nombreCurso\":\"Emprendimiento I\",\r\n    \"descripcionCurso\":\"Curso de Emprendimiento para 1ero Básico\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -248,7 +248,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDU2MTEsImV4cCI6MTcwODcwOTIxMX0.pmnQTSg9sK49HJnxKBDmxgT5meMOZ9nyinDF_NVhnMA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDc2OTMsImV4cCI6MTcwODcxMTI5M30.NkLD0aWYB_cA_DR54UTamm2070xiwtxFu0Esw8_LWmc",
 								"type": "text"
 							}
 						],
@@ -342,7 +342,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzRkMTMxMjBlY2E3N2Y5MjY2NGIiLCJpYXQiOjE3MDg3MDQ5ODQsImV4cCI6MTcwODcwODU4NH0.cfg8j551ylh6mj-__YR7D9Ky0hBANJZrVFzeOfryHXA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzRkMTMxMjBlY2E3N2Y5MjY2NGIiLCJpYXQiOjE3MDg3MDc3ODUsImV4cCI6MTcwODcxMTM4NX0.oQbk6qd4oWB7fOL5BIDkjHP9kOgR5pUlP1XZ7RXFFp4",
 								"type": "text"
 							}
 						],
@@ -356,7 +356,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/curso/alumno/65d8c3d63120eca77f926641",
+							"raw": "http://localhost:3000/api/curso/alumno/65d8cfbae7d3c388332edbce",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -366,7 +366,7 @@
 								"api",
 								"curso",
 								"alumno",
-								"65d8c3d63120eca77f926641"
+								"65d8cfbae7d3c388332edbce"
 							]
 						}
 					},
@@ -379,7 +379,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzRkMTMxMjBlY2E3N2Y5MjY2NGIiLCJpYXQiOjE3MDg3MDY5MTAsImV4cCI6MTcwODcxMDUxMH0.eZZbW9EzYPpZ4FQ1lfnl_sJkCefs2u8Y086qBneR8fI",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzRkMTMxMjBlY2E3N2Y5MjY2NGIiLCJpYXQiOjE3MDg3MDc3ODUsImV4cCI6MTcwODcxMTM4NX0.oQbk6qd4oWB7fOL5BIDkjHP9kOgR5pUlP1XZ7RXFFp4",
 								"type": "text"
 							}
 						],

@@ -14,12 +14,13 @@ const existenteEmail = async (correo='') => {
 
 }
 
-const yaEstaEnCurso = async (idAlumnos='') => {
-    
-    const existeAlumno = await Curso.findOne({ idAlumnos });
-    
-    if (existeAlumno) {
-        throw new Error(`El Alumno ${idAlumnos} ya fue registrado`);
+const cursosMaximo = async (idAlumnos='') => {
+
+    const existeAlumno = await Curso.find({idAlumnos});
+
+    if(existeAlumno){
+        numeral = numeral + 1;
+
     }
 
 }
@@ -48,5 +49,5 @@ module.exports = {
     existenteEmail,
     existeUsuarioById,
     esRolValido,
-    yaEstaEnCurso
+    cursosMaximo
 }

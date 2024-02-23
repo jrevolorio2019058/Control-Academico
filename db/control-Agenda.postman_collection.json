@@ -7,41 +7,479 @@
 	},
 	"item": [
 		{
-			"name": "AgregarUsuario",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Braulio Echeverria\",\r\n    \"correo\": \"braulioecheverria@kinal.edu.gt\",\r\n    \"password\": \"123456\",\r\n    \"role\": \"TEACHER_ROLE\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Registro",
+			"item": [
+				{
+					"name": "registroGeneral",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Andres Cano\",\r\n    \"correo\": \"acano@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/api/usuarios",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"usuarios"
-					]
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "usuariosGet",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"correo\": \"jrevolorio@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curso/Profesor",
+			"item": [
+				{
+					"name": "AgregarCurso/Profesor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMjA0NTAsImV4cCI6MTcwODMyNDA1MH0.9pWoLciBisMwzD0plCUcacKWzbFaYZfGRYOq99R3QMM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCurso\":\"Matematicas II\",\r\n    \"descripcionCurso\":\"Curso de Matematicas para 2ero Básico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/curso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verCursos/Profesor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTc1NDIsImV4cCI6MTcwODMyMTE0Mn0.zkIQXGdkdJOBT_jARe8hAtK1SYmK1MplQ_fxORahjaQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/curso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarCurso/Profesor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNlZDM3NTRjZTA4YjljMTI0ZTFiOGEiLCJpYXQiOjE3MDgzMTc2NDgsImV4cCI6MTcwODMyMTI0OH0.3S-42C6eRMmCx5FTOQvNGL1VFjTd7Y0qdegEgQoYSVY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCurso\":\"Prueba2\",\r\n    \"descripcionCurso\":\"Prueba2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/curso/65d2db885a722d0c015ba923",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"65d2db885a722d0c015ba923"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCurso/Profesor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNmMDdlNzY1MTc4M2E5MGU0MTRiMmMiLCJpYXQiOjE3MDgyOTQzNDAsImV4cCI6MTcwODI5Nzk0MH0.X4oHPCYJqXyM8QLw1pM2F46_VeUeGlMS58Z4nAzF61o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/curso/65cfe79d2b0bb02c1de304af",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"65cfe79d2b0bb02c1de304af"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curso/Alumno",
+			"item": [
+				{
+					"name": "agregarCurso/alumno",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNmMDQ3MzQwYzkzMDk5OWJlOTI2N2EiLCJpYXQiOjE3MDgzMjEyMDksImV4cCI6MTcwODMyNDgwOX0.cLDeuvmoo683X_VFn3m_W7ERn12mZ8SDTEqEdhibBi0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/curso/alumno/65d2e6de247f490cacf44ade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"alumno",
+								"65d2e6de247f490cacf44ade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cursosAlumno",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNlZDM3NTRjZTA4YjljMTI0ZTFiOGEiLCJpYXQiOjE3MDgzMjE0NjAsImV4cCI6MTcwODMyNTA2MH0.Spm5_w2c989CGenINkBOj_Vn7ufKaEbnHA0lrsUd9Bg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/curso/alumno",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"alumno"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario / Alumno",
+			"item": [
+				{
+					"name": "usuarioGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alumnoPut",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTY4MzIsImV4cCI6MTcwODMyMDQzMn0.sQ2h8JcRMW2ewaam7TAYHAmbz8rlH63qBb12shrw79s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Andres Antonio cano\",\r\n    \"password\": \"12042005\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alumnoDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyZDU5NjQyYjMxYjlkMWI5NzRhMjUiLCJpYXQiOjE3MDgzMTYwNjUsImV4cCI6MTcwODMxOTY2NX0.Y6NJVvyHyBqU7TPf8Ne9TSviT8CtgctalCRkhmvVSN8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario / Profesor",
+			"item": [
+				{
+					"name": "registroAProfesor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNlZDM3NTRjZTA4YjljMTI0ZTFiOGEiLCJpYXQiOjE3MDgzMTI2MzEsImV4cCI6MTcwODMxNjIzMX0.2R3w_FZrdGBTtVBhbrOAWO_Kkvtp39J8SB-tTRLAsNQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Ceferino Rodriguez\",\r\n    \"correo\": \"ceferinorodriguez@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/profesor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAlumno/ProfesorById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTY4MzIsImV4cCI6MTcwODMyMDQzMn0.sQ2h8JcRMW2ewaam7TAYHAmbz8rlH63qBb12shrw79s",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/65d2d59642b31b9d1b974a25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"65d2d59642b31b9d1b974a25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profesorPut",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyZDU5NjQyYjMxYjlkMWI5NzRhMjUiLCJpYXQiOjE3MDgzMTY1OTUsImV4cCI6MTcwODMyMDE5NX0.l54vI7h0fo4T7E9jqtZRmgZkLEBwUfiUvlo5P7YFvlg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Ottoniel Menendez\",\r\n    \"correo\": \"omenendez@kinal.edu.gt\",\r\n    \"password\": \"987654\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/65cee300bc8cf9dbf052666a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"65cee300bc8cf9dbf052666a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profesorDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTU5OTksImV4cCI6MTcwODMxOTU5OX0.FLZ6CMhF_VdGXcnn6XirIK_flEHmo6SPPDNL8fuen88",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/65cee300bc8cf9dbf052666a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"65cee300bc8cf9dbf052666a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

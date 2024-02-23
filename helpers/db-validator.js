@@ -2,12 +2,24 @@ const Usuario = require('../models/usuario');
 
 const Role = require('../models/role');
 
+const Curso = require('../models/curso');
+
 const existenteEmail = async (correo='') => {
 
     const existeEmail = await Usuario.findOne({correo});
 
     if(existeEmail){
         throw new Error(`El email ${correo} ya fue registrado`);
+    }
+
+}
+
+const yaEstaEnCurso = async (idAlumnos='') => {
+    
+    const existeAlumno = await Curso.findOne({ idAlumnos });
+    
+    if (existeAlumno) {
+        throw new Error(`El Alumno ${idAlumnos} ya fue registrado`);
     }
 
 }
@@ -35,5 +47,6 @@ const esRolValido = async (role='') => {
 module.exports = {
     existenteEmail,
     existeUsuarioById,
-    esRolValido
+    esRolValido,
+    yaEstaEnCurso
 }

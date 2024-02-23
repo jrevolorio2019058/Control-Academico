@@ -16,291 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Andres Cano\",\r\n    \"correo\": \"acano@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/usuarios",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"usuarios"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Login",
-			"item": [
-				{
-					"name": "Login",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"correo\": \"jrevolorio@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/auth/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"auth",
-								"login"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Curso/Profesor",
-			"item": [
-				{
-					"name": "AgregarCurso/Profesor",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMjA0NTAsImV4cCI6MTcwODMyNDA1MH0.9pWoLciBisMwzD0plCUcacKWzbFaYZfGRYOq99R3QMM",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombreCurso\":\"Matematicas II\",\r\n    \"descripcionCurso\":\"Curso de Matematicas para 2ero Básico\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/curso",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"curso"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "verCursos/Profesor",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTc1NDIsImV4cCI6MTcwODMyMTE0Mn0.zkIQXGdkdJOBT_jARe8hAtK1SYmK1MplQ_fxORahjaQ",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/curso",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"curso"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "actualizarCurso/Profesor",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNlZDM3NTRjZTA4YjljMTI0ZTFiOGEiLCJpYXQiOjE3MDgzMTc2NDgsImV4cCI6MTcwODMyMTI0OH0.3S-42C6eRMmCx5FTOQvNGL1VFjTd7Y0qdegEgQoYSVY",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombreCurso\":\"Prueba2\",\r\n    \"descripcionCurso\":\"Prueba2\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/curso/65d2db885a722d0c015ba923",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"curso",
-								"65d2db885a722d0c015ba923"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "eliminarCurso/Profesor",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNmMDdlNzY1MTc4M2E5MGU0MTRiMmMiLCJpYXQiOjE3MDgyOTQzNDAsImV4cCI6MTcwODI5Nzk0MH0.X4oHPCYJqXyM8QLw1pM2F46_VeUeGlMS58Z4nAzF61o",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/curso/65cfe79d2b0bb02c1de304af",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"curso",
-								"65cfe79d2b0bb02c1de304af"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Curso/Alumno",
-			"item": [
-				{
-					"name": "agregarCurso/alumno",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNmMDQ3MzQwYzkzMDk5OWJlOTI2N2EiLCJpYXQiOjE3MDgzMjEyMDksImV4cCI6MTcwODMyNDgwOX0.cLDeuvmoo683X_VFn3m_W7ERn12mZ8SDTEqEdhibBi0",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/curso/alumno/65d2e6de247f490cacf44ade",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"curso",
-								"alumno",
-								"65d2e6de247f490cacf44ade"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "cursosAlumno",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNlZDM3NTRjZTA4YjljMTI0ZTFiOGEiLCJpYXQiOjE3MDgzMjE0NjAsImV4cCI6MTcwODMyNTA2MH0.Spm5_w2c989CGenINkBOj_Vn7ufKaEbnHA0lrsUd9Bg",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/curso/alumno",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"curso",
-								"alumno"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Usuario / Alumno",
-			"item": [
-				{
-					"name": "usuarioGet",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/usuarios",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"usuarios"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "alumnoPut",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTY4MzIsImV4cCI6MTcwODMyMDQzMn0.sQ2h8JcRMW2ewaam7TAYHAmbz8rlH63qBb12shrw79s",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Andres Antonio cano\",\r\n    \"password\": \"12042005\"\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Oscar Morales\",\r\n    \"correo\": \"omorales@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -322,37 +38,6 @@
 					},
 					"response": []
 				},
-				{
-					"name": "alumnoDelete",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyZDU5NjQyYjMxYjlkMWI5NzRhMjUiLCJpYXQiOjE3MDgzMTYwNjUsImV4cCI6MTcwODMxOTY2NX0.Y6NJVvyHyBqU7TPf8Ne9TSviT8CtgctalCRkhmvVSN8",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/usuarios",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"usuarios"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Usuario / Profesor",
-			"item": [
 				{
 					"name": "registroAProfesor",
 					"request": {
@@ -388,48 +73,26 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
 				{
-					"name": "getAlumno/ProfesorById",
+					"name": "Login",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTY4MzIsImV4cCI6MTcwODMyMDQzMn0.sQ2h8JcRMW2ewaam7TAYHAmbz8rlH63qBb12shrw79s",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/usuarios/65d2d59642b31b9d1b974a25",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"usuarios",
-								"65d2d59642b31b9d1b974a25"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "profesorPut",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyZDU5NjQyYjMxYjlkMWI5NzRhMjUiLCJpYXQiOjE3MDgzMTY1OTUsImV4cCI6MTcwODMyMDE5NX0.l54vI7h0fo4T7E9jqtZRmgZkLEBwUfiUvlo5P7YFvlg",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNmNjQ4MDgyMDVkZmY3MDVhNWJjNTUiLCJpYXQiOjE3MDgwOTUzNDAsImV4cCI6MTcwODA5ODk0MH0.2fFdluNdQg6SgRqwFqbt3rnnlGbCLhLYd8-Fpl8ymio",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Ottoniel Menendez\",\r\n    \"correo\": \"omenendez@kinal.edu.gt\",\r\n    \"password\": \"987654\"\r\n}",
+							"raw": "{\r\n    \"correo\": \"omorales@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -437,7 +100,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/usuarios/65cee300bc8cf9dbf052666a",
+							"raw": "http://localhost:3000/api/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -445,26 +108,60 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"usuarios",
-								"65cee300bc8cf9dbf052666a"
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario / Alumno | Profesor",
+			"item": [
+				{
+					"name": "usuariosGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "profesorDelete",
+					"name": "actualizarAlumno",
 					"request": {
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYzgyMTM0NjAwNTBkNDM3ODNjYzciLCJpYXQiOjE3MDgzMTU5OTksImV4cCI6MTcwODMxOTU5OX0.FLZ6CMhF_VdGXcnn6XirIK_flEHmo6SPPDNL8fuen88",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg1NDQxYjUyM2RlNTc1Mzg5ZmYiLCJpYXQiOjE3MDg3MDU2NTcsImV4cCI6MTcwODcwOTI1N30.PYIaebJwPQ2jf9-b34tnbJn_zUxOPzEopVHmrDYPX8U",
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Fernando Lopez\",\r\n    \"correo\": \"flopez@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/api/usuarios/65cee300bc8cf9dbf052666a",
+							"raw": "http://localhost:3000/api/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -472,8 +169,231 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"usuarios",
-								"65cee300bc8cf9dbf052666a"
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarAlumno",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg1NDQxYjUyM2RlNTc1Mzg5ZmYiLCJpYXQiOjE3MDg3MDYzOTEsImV4cCI6MTcwODcwOTk5MX0.at5F54Pr0zvWPxLB10Yt26_Hi7s_SjDZSZnVKB84NWI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curso/Profesor",
+			"item": [
+				{
+					"name": "AgregarCurso/Profesor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDIyNDIsImV4cCI6MTcwODcwNTg0Mn0.UgIlufiwlKdMjqpbyCpxG28uwrN1Qbk8HesvXllQ5tc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCurso\":\"Fisica I\",\r\n    \"descripcionCurso\":\"Curso de Fisica para 1ero Básico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/curso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verCursos/Profesor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDU2MTEsImV4cCI6MTcwODcwOTIxMX0.pmnQTSg9sK49HJnxKBDmxgT5meMOZ9nyinDF_NVhnMA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/curso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarCurso/Profesor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDU1NDgsImV4cCI6MTcwODcwOTE0OH0.UAmRNSvQeMNo3v6M_27p8Te4P1nV3EBBqQQIExvrAPI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombreCurso\":\"Matematicas II\",\r\n    \"descripcionCurso\":\"Curso de Matematicas para 2ero Básico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/curso/65d8c3d63120eca77f926641",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"65d8c3d63120eca77f926641"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarCurso/Profesor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDU2MTEsImV4cCI6MTcwODcwOTIxMX0.pmnQTSg9sK49HJnxKBDmxgT5meMOZ9nyinDF_NVhnMA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/curso/65d8c3d63120eca77f926641",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"65d8c3d63120eca77f926641"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curso/Alumno",
+			"item": [
+				{
+					"name": "agregarCurso/alumno",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzRkMTMxMjBlY2E3N2Y5MjY2NGIiLCJpYXQiOjE3MDg3MDQ5ODQsImV4cCI6MTcwODcwODU4NH0.cfg8j551ylh6mj-__YR7D9Ky0hBANJZrVFzeOfryHXA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/curso/alumno/65d8c3d63120eca77f926641",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"alumno",
+								"65d8c3d63120eca77f926641"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cursosAlumno",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4YzRkMTMxMjBlY2E3N2Y5MjY2NGIiLCJpYXQiOjE3MDg3MDY5MTAsImV4cCI6MTcwODcxMDUxMH0.eZZbW9EzYPpZ4FQ1lfnl_sJkCefs2u8Y086qBneR8fI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/curso/alumno",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"curso",
+								"alumno"
 							]
 						}
 					},

@@ -35,7 +35,7 @@ const cursoGetProfesor = async (req, res = response) => {
 
     const id_Profesor = req.usuarioId._id;
 
-    const query = { idProfesor: id_Profesor, estado:true}
+    const query = { idProfesor: id_Profesor, estadoCurso:true}
     
     const [total, cursos] = await Promise.all([
 

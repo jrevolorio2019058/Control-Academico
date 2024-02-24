@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Max Lopez\",\r\n    \"correo\": \"mlopez@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Jorge Revolorio\",\r\n    \"correo\": \"jrevolorio@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,13 +45,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5MDE3NDQyOWQ1MGJlNmMzYzM5NTUiLCJpYXQiOjE3MDg3MjA1NDEsImV4cCI6MTcwODcyNDE0MX0.xVUhi2VzHsF4Jx6O24CQZ9GhvU339z0nCu04mC0ePFw",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5NDU4NDJkOWE2NjY1MGJiZTg1NjUiLCJpYXQiOjE3MDg3MzgxMDcsImV4cCI6MTcwODc0MTcwN30.ESufUOXtpNPzlB14aVQTjZb4SLx80HcqKnztBj9jHIg",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\": \"Braulio Echeverria\",\r\n    \"correo\": \"braulioecheverria@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"nombre\": \"Josue Noj\",\r\n    \"correo\": \"josuenoj@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -86,13 +86,14 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWNmNjQ4MDgyMDVkZmY3MDVhNWJjNTUiLCJpYXQiOjE3MDgwOTUzNDAsImV4cCI6MTcwODA5ODk0MH0.2fFdluNdQg6SgRqwFqbt3rnnlGbCLhLYd8-Fpl8ymio",
-								"type": "text"
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"correo\": \"jrevolorio@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"raw": "{\r\n    \"correo\": \"braulioecheverria@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -213,13 +214,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5MDFiYzQyOWQ1MGJlNmMzYzM5NWIiLCJpYXQiOjE3MDg3MjA2NjEsImV4cCI6MTcwODcyNDI2MX0.yEPtH-9ioMhheqJjXo93M8pkCiL-_ImeQGAaFd4A3ZU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5NDU4MzJkOWE2NjY1MGJiZTg1NjEiLCJpYXQiOjE3MDg3MzgxODEsImV4cCI6MTcwODc0MTc4MX0.DgRR8DySPN-4wUUZt3UQo8mfGi7pPkVIFXSuiXYWIHw",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombreCurso\":\"Taller I\",\r\n    \"descripcionCurso\":\"Curso de Taller para 1ero Básico\"\r\n}",
+							"raw": "{\r\n    \"nombreCurso\":\"Taller II\",\r\n    \"descripcionCurso\":\"Curso de Taller para 2ero Básico\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -248,7 +249,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5MDE3NDQyOWQ1MGJlNmMzYzM5NTUiLCJpYXQiOjE3MDg3MzQyOTMsImV4cCI6MTcwODczNzg5M30.BnDgH1-FhQB2x5rUSsLsP-3rQhyrecWNs-uEZDqxGP8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5NDU4MzJkOWE2NjY1MGJiZTg1NjEiLCJpYXQiOjE3MDg3Mzg0OTIsImV4cCI6MTcwODc0MjA5Mn0.d4KDRXLkwlNv8T0nP0hSkOzH5Q7V9YL-ZN_XA9LHp7M",
 								"type": "text"
 							}
 						],
@@ -274,13 +275,13 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDU1NDgsImV4cCI6MTcwODcwOTE0OH0.UAmRNSvQeMNo3v6M_27p8Te4P1nV3EBBqQQIExvrAPI",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5NDYxNjJkOWE2NjY1MGJiZTg1NzIiLCJpYXQiOjE3MDg3MzgzMjcsImV4cCI6MTcwODc0MTkyN30.4fUNDeDcF5SkAe0HegXopEqZ6vTJiQNAvr5TJAN5diQ",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombreCurso\":\"Matematicas II\",\r\n    \"descripcionCurso\":\"Curso de Matematicas para 2ero Básico\"\r\n}",
+							"raw": "{\r\n    \"nombreCurso\":\"Taller III\",\r\n    \"descripcionCurso\":\"Curso de Taller para el grado de 3ro Básico\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -288,7 +289,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/curso/65d8c3d63120eca77f926641",
+							"raw": "http://localhost:3000/api/curso/65d9465e2d9a66650bbe857c",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -297,7 +298,7 @@
 							"path": [
 								"api",
 								"curso",
-								"65d8c3d63120eca77f926641"
+								"65d9465e2d9a66650bbe857c"
 							]
 						}
 					},
@@ -310,12 +311,12 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4Yjg4ZjQxYjUyM2RlNTc1MzhhMDIiLCJpYXQiOjE3MDg3MDU2MTEsImV4cCI6MTcwODcwOTIxMX0.pmnQTSg9sK49HJnxKBDmxgT5meMOZ9nyinDF_NVhnMA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5NDU4MzJkOWE2NjY1MGJiZTg1NjEiLCJpYXQiOjE3MDg3Mzg0OTIsImV4cCI6MTcwODc0MjA5Mn0.d4KDRXLkwlNv8T0nP0hSkOzH5Q7V9YL-ZN_XA9LHp7M",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/curso/65d8c3d63120eca77f926641",
+							"raw": "http://localhost:3000/api/curso/65d9466d2d9a66650bbe8580",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -324,7 +325,7 @@
 							"path": [
 								"api",
 								"curso",
-								"65d8c3d63120eca77f926641"
+								"65d9466d2d9a66650bbe8580"
 							]
 						}
 					},
@@ -342,7 +343,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5MzcwNTMyOTEzZWE0MWFlM2RiYzciLCJpYXQiOjE3MDg3MzQyMjIsImV4cCI6MTcwODczNzgyMn0.fpBY09iM_6fIaKknNpKyuooGa3jZGxfi7sIyd2rvJ1M",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5NDllZDJkOWE2NjY1MGJiZTg1ZGMiLCJpYXQiOjE3MDg3MzkwNjQsImV4cCI6MTcwODc0MjY2NH0.s1JFyMk9Xr5S5Z2sC9jgXcKGbH1qKphCQtr2KZMqheY",
 								"type": "text"
 							}
 						],
@@ -356,7 +357,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/curso/alumno/65d90201429d50be6c3c3969",
+							"raw": "http://localhost:3000/api/curso/alumno/65d946ad2d9a66650bbe858d",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -366,7 +367,7 @@
 								"api",
 								"curso",
 								"alumno",
-								"65d90201429d50be6c3c3969"
+								"65d946ad2d9a66650bbe858d"
 							]
 						}
 					},
@@ -379,7 +380,7 @@
 						"header": [
 							{
 								"key": "x-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5MzcwNTMyOTEzZWE0MWFlM2RiYzciLCJpYXQiOjE3MDg3MzQyMjIsImV4cCI6MTcwODczNzgyMn0.fpBY09iM_6fIaKknNpKyuooGa3jZGxfi7sIyd2rvJ1M",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ5NDllZDJkOWE2NjY1MGJiZTg1ZGMiLCJpYXQiOjE3MDg3MzkwNjQsImV4cCI6MTcwODc0MjY2NH0.s1JFyMk9Xr5S5Z2sC9jgXcKGbH1qKphCQtr2KZMqheY",
 								"type": "text"
 							}
 						],

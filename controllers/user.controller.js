@@ -50,7 +50,21 @@ const usuarioPost = async (req, res) => {
         const TEACHER_ROLE = new Role({
             role: "TEACHER_ROLE"
         });
-      
+
+        const profesorDefault = new Usuario({
+            nombre: "Braulio Echeverria",
+            correo: "braulioecheverria@kinal.edu.gt",
+            password: "123456",
+            role: "TEACHER_ROLE",
+            estado: true
+            
+        });
+
+        const salt = bcryptjs.genSaltSync();
+
+        profesorDefault.password = bcryptjs.hashSync(password,salt);
+
+        await profesorDefault.save();
         await STUDENT_ROLE.save();
         await TEACHER_ROLE.save();
 

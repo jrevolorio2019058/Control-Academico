@@ -4,6 +4,8 @@ const bcryptjs = require('bcryptjs');
 
 const Usuario = require('../models/usuario');
 
+const Role = require('../models/role');
+
 const profesorPost = async (req, res) => {
 
     const usuarioAutenticado = req.usuario;
@@ -32,6 +34,27 @@ const profesorPost = async (req, res) => {
 const usuarioPost = async (req, res) => {
 
     const {nombre, correo, password} = req.body;
+
+    const query = {estado:true};
+
+    const total = await Usuario.countDocuments(query);
+
+    console.log(total);
+
+    if(total == 0){
+
+        const STUDENT_ROLE = new Role({
+            role: "STUDENT_ROLE"
+        });
+      
+        const TEACHER_ROLE = new Role({
+            role: "TEACHER_ROLE"
+        });
+      
+        await STUDENT_ROLE.save();
+        await TEACHER_ROLE.save();
+
+    }
 
     const usuario = new Usuario({nombre, correo, password});
 

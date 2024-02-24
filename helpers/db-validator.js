@@ -14,17 +14,6 @@ const existenteEmail = async (correo='') => {
 
 }
 
-const cursosMaximo = async (idAlumnos='') => {
-
-    const existeAlumno = await Curso.find({idAlumnos});
-
-    if(existeAlumno){
-        numeral = numeral + 1;
-
-    }
-
-}
-
 const existeUsuarioById = async (id='') => {
 
     const existeUsuario = await Usuario.findOne({id});
@@ -48,6 +37,5 @@ const esRolValido = async (role='') => {
 module.exports = {
     existenteEmail,
     existeUsuarioById,
-    esRolValido,
-    cursosMaximo
+    esRolValido
 }

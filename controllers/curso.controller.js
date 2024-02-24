@@ -127,13 +127,29 @@ const cursoPutAlumno = async (req, res) => {
 
     const { id } = req.params;
 
-    const curso = await Curso.findOneAndUpdate(
-        { _id: id, idAlumnos: { $ne: idAlumno } },
-        { $addToSet: { idAlumnos: idAlumno } },
-        { new: true }
-    );
+    const { limite, desde } = req.query;
 
-    if (!curso) {
+    const query = { idAlumnos: { $in: [idAlumno] }, estadoCurso: true };
+
+    const [total, cursoExistente] = await Promise.all([
+        Curso.countDocuments(query),
+        Curso.findOneAndUpdate(
+            { _id: id, idAlumnos: { $ne: idAlumno } },
+            { $addToSet: { idAlumnos: idAlumno } },
+            { new: true }
+        )
+    ]);
+
+    console.log(total)
+
+    if(total > 2){
+        return res.status(400).json({
+            msg: `Haz llegado al maximo de cursos asignables.`,
+            usuarioAutenticado
+        });
+    }
+
+    if(!cursoExistente) {
         return res.status(400).json({
             msg: `El alumno ya está en el curso`,
             usuarioAutenticado
@@ -142,8 +158,7 @@ const cursoPutAlumno = async (req, res) => {
 
     res.status(200).json({
         msg: `Agregado al curso`,
-        usuarioAutenticado,
-        curso
+        usuarioAutenticado
     });
 
 }
